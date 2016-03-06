@@ -6,6 +6,7 @@
         {% block stylesheets %}
         
          <link href="{{ asset('/bundles/loginlogin/css/bootstrap.css') }}" rel="stylesheet" />
+         <link href="{{ asset('/bundles/loginlogin/css/Vertical.css') }}" rel="stylesheet" />
         
         
         
@@ -16,6 +17,7 @@
         {% block body %}
         
         {{ include ('LoginLoginBundle:Default:NavBarre.html.twig') }} 
+         {{ include ('LoginLoginBundle:Default:VerticalBar.html.twig') }} 
          
         
         {% endblock %}
