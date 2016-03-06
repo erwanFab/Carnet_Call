@@ -2,12 +2,27 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Carnet d'Adresse!{% endblock %}</title>
+        {% block stylesheets %}
+        
+         <link href="{{ asset('/bundles/loginlogin/css/bootstrap.css') }}" rel="stylesheet" />
+        
+        
+        
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block body %}
+        
+        {{ include ('LoginLoginBundle:Default:NavBarre.html.twig') }} 
+         
+        
+        {% endblock %}
+        {% block javascripts %}
+         <script src="{{ asset('/bundles/loginlogin/js/jquery.js') }}"></script>
+         <script src="{{ asset('/bundles/loginlogin/js/bootstrap.js') }}"></script>
+        
+        {% endblock %}
     </body>
 </html>
