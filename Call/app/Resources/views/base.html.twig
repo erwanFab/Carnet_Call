@@ -7,20 +7,23 @@
         
          <link href="{{ asset('/bundles/loginlogin/css/bootstrap.css') }}" rel="stylesheet" />
          <link href="{{ asset('/bundles/loginlogin/css/Vertical.css') }}" rel="stylesheet" />
-        
+        <link href="{{ asset('/bundles/loginlogin/css/Cube.css') }}" rel="stylesheet" />
         
         
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}
-        
+       
+        {% block header %}
         {{ include ('LoginLoginBundle:Default:NavBarre.html.twig') }} 
-         {{ include ('LoginLoginBundle:Default:VerticalBar.html.twig') }} 
-         
-        
         {% endblock %}
+        
+         {% block content %}
+         
+         {% endblock %}
+        
+        
         {% block javascripts %}
          <script src="{{ asset('/bundles/loginlogin/js/jquery.js') }}"></script>
          <script src="{{ asset('/bundles/loginlogin/js/bootstrap.js') }}"></script>

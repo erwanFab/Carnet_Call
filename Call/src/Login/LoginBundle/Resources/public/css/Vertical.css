@@ -1,6 +1,6 @@
 body{
 	
-	background:red;
+	background:#C0C0C0;
 }
 
 
@@ -27,4 +27,20 @@ body{
 	
 	
 	
+}
+
+.fond{
+	
+	width:1800px;
+	height:800px;
+	
+	
+}
+.Encadrement{
+	margin-top:-700px;
+	margin-left:850px;
+	width:800px;
+	height:700px;
+	
+	font-size:75px;
 }
