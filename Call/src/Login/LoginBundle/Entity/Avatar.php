@@ -15,7 +15,7 @@ class Avatar
 
 	/**
 	 * @var decimal $id
-	 * @ORM\Column(name="id", type="int")
+	 * @ORM\Column(name="id", type="integer")
 	 * @ORM\Id
 	 * @ORM\GeneratedValue(strategy="AUTO")
 	 * @ORM\OneToMany(targetEntity="carnet", mappedBy="avatar", cascade={"persist", "remove", "merge"})
@@ -35,7 +35,7 @@ class Avatar
 
      *     maxSize = "5M",
 
-     *     mimeTypes = {"photo/jpeg","photo/jpg", "photo/png", "photo/gif"},
+     *     
 
      *     mimeTypesMessage = "ce format de photo est inconnu",
 

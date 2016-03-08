@@ -13,7 +13,7 @@ class Categories
 {
     /**
      * @var decimal $id
-     * @ORM\Column(name="id", type="int")
+     * @ORM\Column(name="id", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      * @ORM\OneToMany(targetEntity="carnet", mappedBy="categories", cascade={"persist", "remove", "merge"})
@@ -43,17 +43,17 @@ class Categories
  /*---------------------------------------*/   
    
     /**
-     * @param text $nom
+     * @param text $nom_categorie
      */
-    public function setNom($nom_categorie)
+    public function setNomCategorie($nom_categorie)
     {
     	$this->nom_categorie = $nom_categorie;
     }
     
     /**
-     * @return text $nom
+     * @return text $nom_categorie
      */
-    public function getNom()
+    public function getNomCategorie()
     {
     	return $this->nom_categorie;
     }

@@ -10,3 +10,8 @@ login_login_carnet:
 login_login_avatar:
     path:     /avatar/new
     defaults: { _controller: "LoginLoginBundle:Avatar:new" }
+    
+
+login_login_categorie:
+    path:     /categories/new
+    defaults: { _controller: "LoginLoginBundle:Categories:new" }
