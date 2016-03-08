@@ -3,7 +3,7 @@ login_login_homepage:
     defaults: { _controller: "LoginLoginBundle:Default:index" }
 
 login_login_carnet:
-    path:     /carnet/
+    path:     /carnet
     defaults: { _controller: "LoginLoginBundle:Carnet:index" }
     
 
