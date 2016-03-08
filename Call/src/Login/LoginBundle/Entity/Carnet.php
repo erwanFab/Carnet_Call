@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class Avatar 
+class Carnet 
 {
 
 	/**
@@ -33,7 +33,7 @@ class Avatar
 	/*	-----------------------------------------------------------------------------------------	*/
 	
 	public function __construct() {
-		$this->categories = new ArrayCollection();
+		$this->carnet = new ArrayCollection();
 	}
 	
 	}
