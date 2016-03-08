@@ -1,0 +1,26 @@
+{%  extends 'base.html.twig' %}
+
+{% block content %}
+{{ include ('LoginLoginBundle:Default:VerticalBar.html.twig') }} 
+
+
+<div class="fond">
+	<div class = "Encadrement">
+		<h1 class="Avatar">Ajouter une image </h1>
+		
+		{{ form_start(formAvatar, {'method': 'POST'}) }}
+		
+		   
+		
+            {{ form_widget(formAvatar) }}
+		    <input type="submit" value="Uploader"
+		           class="btn btn-default " />
+		{{ form_end(formAvatar) }}
+	</div>
+</div>
+
+
+
+
+
+{% endblock %}

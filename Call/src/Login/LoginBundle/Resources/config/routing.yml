@@ -1,3 +1,12 @@
 login_login_homepage:
     path:     /
-    defaults: { _controller: LoginLoginBundle:Default:index }
+    defaults: { _controller: "LoginLoginBundle:Default:index" }
+
+login_login_carnet:
+    path:     /carnet/
+    defaults: { _controller: "LoginLoginBundle:Carnet:index" }
+    
+
+login_login_avatar:
+    path:     /avatar/new
+    defaults: { _controller: "LoginLoginBundle:Avatar:new" }

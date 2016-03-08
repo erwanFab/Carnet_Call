@@ -1,14 +1,40 @@
+
+
+
+
+
+
 .wrap {
 	margin-top:60px;
+	margin-left :100px;
 	perspective: 800px;
 	perspective-origin: 50% 100px;
+	width:300px;
+	height:300px;
 }
 
+
+/*
+ *	Préparation d'un cubre qui tourne
+ *  On défini en 3D par la fonction 
+ *  transform-style: preserve-3d;
+ *  pour les lien une couleur clair sera défini 
+ *  afin de permettre une bonne visibilité du lien
+ *  l'annimation sera une rotation sur l'axe Y 
+ *  défini par SPIN
+ *
+ */
 .cube {
 	position: relative;
 	width: 200px;
 	transform-style: preserve-3d;
+	font-size:42px;
 }
+
+
+
+
+
 
 .cube div {
 	position: absolute;
@@ -18,6 +44,17 @@
 	color:white;
 	text-align:center;
 }
+
+.cube :hover,
+.cube :focus {
+
+	color: FloralWhite;
+	
+}
+
+
+
+
 
 .back {
 	transform: translateZ(-100px) rotateY(180deg);
