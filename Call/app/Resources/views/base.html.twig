@@ -2,6 +2,8 @@
 <html>
     <head>
         <meta charset="UTF-8" />
+        
+ 		<meta name= "viewport" content= "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
         <title>{% block title %}Carnet d'Adresse!{% endblock %}</title>
         {% block stylesheets %}
         
@@ -9,8 +11,9 @@
          <link href="{{ asset('/bundles/loginlogin/css/Vertical.css') }}" rel="stylesheet" />
          <link href="{{ asset('/bundles/loginlogin/css/Cube.css') }}" rel="stylesheet" />
          <link href="{{ asset('/bundles/loginlogin/css/Avatar.css') }}" rel="stylesheet" />
-        
-        
+         <link href="{{ asset('/bundles/loginlogin/css/Carnet.css') }}" rel="stylesheet" />
+         <link href="{{ asset('/bundles/loginlogin/css/simplePagination.css') }}" rel="stylesheet" />
+         <link href="{{ asset('/bundles/loginlogin/css/General.css') }}" rel="stylesheet" />
         {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>

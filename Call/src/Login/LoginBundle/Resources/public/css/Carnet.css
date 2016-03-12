@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+.count {
+	
+	width:300px;
+	height:100px;
+	margin-left : 1000px;
+	font-size:25px;
+	
+}
+
+
+.personne
+{
+
+	
+	background :DarkSlateGray;
+	color:white;
+	font-size:25px;
+	margin-left:90px;
+	margin-top:50px;
+	
+	
+}
+
+.Entete
+{
+	height:20px;
+	font-size:35px;
+	
+}
+.Line
+{
+	height:400px;
+	font-weight : bold;
+	font-style : italic;
+	
+}
+
+.picture
+{
+	width:300px;
+	height:200px;
+	
+}
+.Nom
+{
+	width:400px;
+	height:200px;
+	
+}
+.Prenom
+{
+	margin-left:40px;
+	width:400px;
+	height:200px;
+	
+}

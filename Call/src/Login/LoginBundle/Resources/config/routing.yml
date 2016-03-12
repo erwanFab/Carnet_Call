@@ -6,6 +6,38 @@ login_login_carnet:
     path:     /carnet
     defaults: { _controller: "LoginLoginBundle:Carnet:index" }
     
+login_login_amis:
+    path:     /carnet/friends
+    defaults: { _controller: "LoginLoginBundle:Carnet:friends" }
+
+login_login_familly:
+    path:     /carnet/familly
+    defaults: { _controller: "LoginLoginBundle:Carnet:familly" }
+
+login_login_doctor:
+    path:     /carnet/doctor
+    defaults: { _controller: "LoginLoginBundle:Carnet:doctor" }
+
+login_login_pmi:
+    path:     /carnet/pmi
+    defaults: { _controller: "LoginLoginBundle:Carnet:pmi" }
+
+login_login_auto:
+    path:     /carnet/auto
+    defaults: { _controller: "LoginLoginBundle:Carnet:auto" }
+
+login_login_house:
+    path:     /carnet/house
+    defaults: { _controller: "LoginLoginBundle:Carnet:house" }
+
+
+login_login_complement:
+    path:     /complement/{id}/{nom}/{prenom}
+    defaults: { _controller: "LoginLoginBundle:Complement:index" }
+  
+
+
+
 
 login_login_avatar:
     path:     /avatar/new

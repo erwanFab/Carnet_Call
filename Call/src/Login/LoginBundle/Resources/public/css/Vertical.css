@@ -8,14 +8,14 @@ body{
 {
 	margin-top:-20px;
 	width :350px;
-	height:1100px;
+	height:1400px;
 	font-size:25px;
 	
 }
 
 .container{
 	margin-top:20px;
-	padding:10px;
+	padding:5px;
 	
 	width :300px;
 	
@@ -31,16 +31,6 @@ body{
 
 .fond{
 	
-	width:2800px;
-	height:800px;
-	
-	
-}
-.Encadrement{
-	margin-top:-700px;
-	margin-left:850px;
-	width:1000px;
-	height:700px;
-	
-	font-size:75px;
+	width:400px;
+	height:auto;
 }

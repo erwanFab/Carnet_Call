@@ -1,112 +1,60 @@
+{%  extends 'base.html.twig' %}
+{% block images %}
+	<img src="{{ asset('bundles/LoginLoginBundle/img/logo_count.png') }}" width="260" height="260" alt="logo" />
+ {% endblock %}
 
+{% block content %}
+{{ include ('LoginLoginBundle:Default:VerticalBar.html.twig') }} 
+<div class="Encadrement">
+<div class="fenetre">
+			<h1 class="Avatar">Carnet d'adresse</h1>
 
-{% block stylesheets %}
-
-<link rel="stylesheet" href="{{ asset('bundles/loginlogin/css/carnet.css') }}" />
-<link rel="stylesheet" href="{{ asset('bundles/loginlogin/css/bootstrap.min.css') }}" />
-<link rel="stylesheet" href="{{ asset('bundles/loginlogin/css/header.css') }}" />
-<link rel="stylesheet" href="{{ asset('bundles/loginlogin/css/simplePagination.css') }}" />
-
-
+			<div class="count">
+							
+				<img src="{{ asset('bundles/loginlogin/img/logo_count.png') }}"width="100" height="100" alt="logo"/>  {{ pagination.getTotalItemCount }} Personnes
+			</div>
+			
+			<div class="dark-theme">
+   							 {{ knp_pagination_render(pagination) }}
+			</div>
+			
+			<table class="personne">
+			
+						<thead class="Entete">
+								     <tr>
+								        <th>{{ knp_pagination_sortable(pagination, ' ', 'a.picture_name') }}</th>
+						    			<th>{{ knp_pagination_sortable(pagination, 'Prenom', 'a.prenom') }}</th>
+						    			<th{% if pagination.isSorted('a.nom') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'a.nom') }}</th>
+						   				 <th>{{ knp_pagination_sortable(pagination, 'Categories','a.id_cat') }}</th>
+								     </tr>
+					   </thead>
+							{# table body #}
+							{% for contact in pagination %}
+							<tr {% if loop.index is odd %}class="color"{% endif %}>
+							    
+							     		<td class="picture">
+							     
+												{% if contact.picture_name is defined %}
+							     				 		<img src="{{app.request.basepath}}/uploads/pictures/{{contact.picture_name}}" width="200px",Height="200px" />
+							   					{% else %}
+							    								Pas d'image de profil chargée !
+												{% endif %}
+										</td>
+										<td class="Prenom">{{ contact.prenom }}</td>
+    									<td class = "Nom"><a href="{{ path('login_login_complement', {'id': contact.id_personne ,'nom': contact.nom ,'prenom': contact.prenom }) }}">{{ contact.nom }}</a></td>
+    									<td>{{ contact.nom_categorie }}</td>
     
-{% endblock %}
-
- {% block images %}
-<img src="{{ asset('bundles/LoginLoginBundle/img/logo_count.png') }}" width="260" height="260" alt="logo" />
-
-
-{% endblock %}
-
-{%  block content %}
-
-
-
-
-
-
-
-{% block Nav %}
-
-{% include ('LoginLoginBundle:Default:Navbar.html.twig') %}
-
-{% endblock %}
-
-<div class="fond">
- 
-
- <div class="row">
-  {% include ('LoginLoginBundle:Default:Vertical.html.twig') %}
-						<div class="col-View">
-			  
-			    
-			    															<h1 class="title">Carnet d'adresse</h1>
-			    															
-			    															
-			    															<div class="encadrement">			    
+    						{% endfor %}
+							</tr>
+								
+								
 			
-																						<div class="count">
-																						
-																				<img src="{{ asset('bundles/loginlogin/img/logo_count.gif') }}"width="100" height="100" alt="logo"/>
-	
-  {{ pagination.getTotalItemCount }}
-</div>
-<div class="dark-theme">
-    {{ knp_pagination_render(pagination) }}
-</div>
-<table>
-<tr>
-{# sorting of properties based on query components #}
-	<th>{{ knp_pagination_sortable(pagination, ' ', 'a.picture_name') }}</th>
-    <th>{{ knp_pagination_sortable(pagination, 'Prenom', 'a.prenom') }}</th>
-    <th{% if pagination.isSorted('a.nom') %} class="sorted"{% endif %}>{{ knp_pagination_sortable(pagination, 'Nom', 'a.nom') }}</th>
-    <th>{{ knp_pagination_sortable(pagination, 'Categories','a.id_cat') }}</th>
-    
-</tr class = "Line">
-
-{# table body #}
-{% for contact in pagination %}
-	<tr {% if loop.index is odd %}class="color"{% endif %}>
-    
-     		<td class="picture">
-     
-					{% if contact.picture_name is defined %}
-     		
-							 		<img src="{{app.request.basepath}}/uploads/picture/{{contact.picture_name}}" width="200px",Height="200px" />
-   
-    								
-					{% else %}
-    								Pas d'image de profil chargée !
-					{% endif %}
-	</td>
-    <td class="Prenom">{{ contact.prenom }}</td>
-    <td class = "Nom">{{ contact.nom }}</td>
-    <td>{{ contact.nom_categorie }}</td>
-    <td></td>
-	
-	
-</tr>
-{% endfor %}
-</table>
-{# display navigation #}
-<div class="dark-theme">
-    {{ knp_pagination_render(pagination) }}
-</div>
-			
-			
-			
-																		</div>
-			    															
-			    															
-			    															
-			    															
-			    															
-			    															
-			    															
-											
+			</table>
+			<div class="dark-theme">
+   							 {{ knp_pagination_render(pagination) }}
+			</div>
 	</div>
 </div>
-
-
 {%  endblock %}
 
 

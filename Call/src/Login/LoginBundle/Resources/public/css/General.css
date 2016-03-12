@@ -1,0 +1,22 @@
+@CHARSET "UTF-8";
+
+.fenetre
+{
+	
+	width:1800px;
+	height:auto;
+	
+	margin-top:-1200px;
+	margin-left: 450px;
+}
+
+.Encadrement
+{
+	width:1800px;
+	height:auto;
+	
+	margin-top:-1000px;
+	margin-left:400px;
+	
+	
+}
