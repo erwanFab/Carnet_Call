@@ -26,11 +26,23 @@ class ComplementController extends Controller
 		$prenom = $request->attributes->get('prenom');
 		
 
+		$em    = $this->get('doctrine.orm.entity_manager');
+			
+		$dql = "Select Ca.nom,Cpl.adresse,Cpl.email,Cpl.tel_fixe,Cpl.tel_box,Cpl.mobile
+			FROM LoginLoginBundle:Complement AS Cpl
+			INNER JOIN LoginLoginBundle:Carnet  As Ca
+			WITH Ca.id_personne = Cpl.personne
+			WHERE Cpl.id = ".$id;
+			
+		$query = $em->createQuery($dql);
+			
+		$complement = $query->getResult();
+		
+	
 		
 		
-		var_dump($id);
 		// parameters to template
-		return $this->render('LoginLoginBundle:Carnet:Complement.html.twig',array('nom'=>$nom , 'prenom'=>$prenom ));
+		return $this->render('LoginLoginBundle:Carnet:Complement.html.twig',array('nom'=>$nom , 'prenom'=>$prenom ,'complement'=>$complement));
 		
 	}
 	
