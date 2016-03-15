@@ -183,11 +183,11 @@ class CarnetController extends Controller
 					$pagination = $paginator->paginate(
 							$query, /* query NOT result */
 							$request->query->getInt('page', 1)/*page number*/,
-							10
+							5
 				
 							/*limit per page*/
 							);
-					var_dump($pagination);
+					
 					// parameters to template
 					return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
 					
@@ -231,7 +231,7 @@ class CarnetController extends Controller
 					$pagination = $paginator->paginate(
 							$query, /* query NOT result */
 							$request->query->getInt('page', 1)/*page number*/,
-							10
+							5
 				
 							/*limit per page*/
 							);
@@ -275,7 +275,7 @@ class CarnetController extends Controller
 					$pagination = $paginator->paginate(
 							$query, /* query NOT result */
 							$request->query->getInt('page', 1)/*page number*/,
-							10
+							5
 				
 							/*limit per page*/
 							);
@@ -322,7 +322,7 @@ class CarnetController extends Controller
 					$pagination = $paginator->paginate(
 							$query, /* query NOT result */
 							$request->query->getInt('page', 1)/*page number*/,
-							10
+							5
 				
 							/*limit per page*/
 							);

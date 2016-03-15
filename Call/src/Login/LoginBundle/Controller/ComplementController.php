@@ -39,7 +39,7 @@ class ComplementController extends Controller
 		$complement = $query->getResult();
 		
 	
-		var_dump($complement);
+		
 		
 		// parameters to template
 		return $this->render('LoginLoginBundle:Carnet:Complement.html.twig',array('nom'=>$nom , 'prenom'=>$prenom ,'complement'=>$complement));
