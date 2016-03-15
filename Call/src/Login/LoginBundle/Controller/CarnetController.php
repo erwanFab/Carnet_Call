@@ -172,7 +172,7 @@ class CarnetController extends Controller
 							WITH A.id_cat = Ca.id
 							INNER JOIN LoginLoginBundle:Avatar  As Av WITH  A.image_id=Av.id
 							WHERE A.id_cat = 3
-							AND A.id_cat = 4";
+							OR A.id_cat= 4";
 				
 					$query = $em->createQuery($dql);
 				
@@ -187,7 +187,7 @@ class CarnetController extends Controller
 				
 							/*limit per page*/
 							);
-				
+					var_dump($pagination);
 					// parameters to template
 					return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
 					
@@ -203,7 +203,7 @@ class CarnetController extends Controller
 				 * Selection par Médecin et PMI
 				 *
 				 * Même code que indexAction en rajoutant
-				 * l'element WHERE id_cat = 3 AND id_cat =4 afin de récupérer les Amis
+				 * l'element WHERE id_cat = 3 OR id_cat =4 afin de récupérer les Amis
 				 *
 				 *
 				 */
@@ -219,8 +219,8 @@ class CarnetController extends Controller
 							INNER JOIN LoginLoginBundle:Categories  As Ca
 							WITH A.id_cat = Ca.id
 							INNER JOIN LoginLoginBundle:Avatar  As Av WITH  A.image_id=Av.id
-							WHERE A.id_cat = 3
-							AND A.id_cat = 4";
+							WHERE A.id_cat = 5
+							";
 				
 					$query = $em->createQuery($dql);
 				
