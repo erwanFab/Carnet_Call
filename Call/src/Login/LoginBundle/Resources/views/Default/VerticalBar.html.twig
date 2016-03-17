@@ -8,11 +8,11 @@
 			<div class="nav-collapse">
 				<ul class="nav">
 					<li class="divider-vertical"></li>
-					<li class="active"><a href="#">Amis</a></li>
+					<li class="active"><a href="{{ path('login_login_amis') }}">Amis</a></li>
 					<li class="divider-vertical"></li>
 					<li class="active"><a href="#">Banque</a></li>
 					<li class="divider-vertical"></li>
-					<li><a href="#">Famille</a></li>
+					<li><a href="{{ path('login_login_familly') }}">Famille</a></li>
 					<li class="divider-vertical"></li>
 					<li class="active"><a href="#">Garage</a></li>
 					<li class="divider-vertical"></li>
@@ -22,10 +22,10 @@
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Médecin <b class="caret"></b></a>
 						<ul class="dropdown-menu">
 							<li><a href="#">Dentiste</a></li>
-							<li><a href="#">Médecin Généraliste</a></li>
-							<li><a href="#">Médecin Spécialiste</a></li>
+							<li><a href="{{ path('login_login_doctor') }}">Médecin Généraliste</a></li>
+							<li><a href="{{ path('login_login_doctor') }}">Médecin Spécialiste</a></li>
 							<li class="divider"></li>
-							<li><a href="#">Médecin de la PMI</a></li>
+							<li><a href="{{ path('login_login_pmi') }}">Médecin de la PMI</a></li>
 							
 						</ul>
 					</li>

@@ -22,6 +22,7 @@
 	<buildpathentry kind="src" path="vendor/swiftmailer/swiftmailer/lib"/>
 	<buildpathentry kind="src" path="vendor/psr/log"/>
 	<buildpathentry kind="src" path="vendor/symfony/symfony/src/Symfony/Component/Intl/Resources/stubs"/>
+	<buildpathentry kind="src" path="vendor/friendsofsymfony/user-bundle"/>
 	<buildpathentry kind="src" path="vendor/paragonie/random_compat/lib"/>
 	<buildpathentry kind="src" path="vendor/symfony/polyfill-intl-icu"/>
 	<buildpathentry kind="src" path="vendor/incenteev/composer-parameter-handler"/>

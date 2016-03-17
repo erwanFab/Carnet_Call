@@ -5,3 +5,7 @@ login_login:
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation
+
+# routing for FOSUser
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"

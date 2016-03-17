@@ -10,6 +10,24 @@
 	margin-left: 50px;
 }
 
+	/*
+	*	fenetre permettant l'accés à la boite d'avatar et catégorie'
+	*/
+
+
+
+.fenetre2
+{
+	
+	width:1400px;
+	height:auto;
+	
+	margin-top:-1200px;
+	margin-left: 350px;
+}
+
+
+
 .Encadrement
 {
 	width:1400px;
@@ -20,3 +38,51 @@
 	
 	
 }
+	/* Espace permettant l'accés 
+	*	au Login et Register
+	*/
+
+.container2 { 
+	margin: 25px auto;
+	position: relative; 
+	width: 900px;
+ }
+
+	/*
+	*	Couleur de Connection ou de Déconnection 
+	*	s'effectue dans le class bootstrap <span class =" ...; icon-success" >
+	*	par example pour indiquer le vert => color : green
+	*	Pour ce qui est du profile on va accorder une couleur jaune pale
+	*	Pour l'enregistrement d'un nouveau profile on choisiera la couleur Orange
+	*/
+
+
+.icon-success 
+{
+    color: #5CB85C;
+    font-size:19px;
+}
+
+.icon-default 
+{
+	color: #FF0000;
+	font-size:19px;
+	
+}
+
+.icon-profile
+{
+	color:#FFFFE0;
+	font-size:19px;
+}
+
+.icon-register
+{
+	color:#FF6347;
+	font-size:19px;
+}
+
+
+
+
+

@@ -2,6 +2,8 @@ login_login_homepage:
     path:     /
     defaults: { _controller: "LoginLoginBundle:Default:index" }
 
+# Routing for view list's adress boook
+  
 login_login_carnet:
     path:     /carnet
     defaults: { _controller: "LoginLoginBundle:Carnet:index" }
@@ -35,15 +37,23 @@ login_login_complement:
     path:     /complement/{id}/{nom}/{prenom}
     defaults: { _controller: "LoginLoginBundle:Complement:index" }
   
-
-
-
+# Add a new avatar
 
 login_login_avatar:
     path:     /avatar/new
     defaults: { _controller: "LoginLoginBundle:Avatar:new" }
     
+# Add a new categorie
 
 login_login_categorie:
     path:     /categories/new
     defaults: { _controller: "LoginLoginBundle:Categories:new" }
+    
+# for Administration we use FOS UserBundle for Login and Register
+
+
+    
+#fos_user_security_check:
+    #path:     /login_check
+    #defaults: { _controller: "LoginLoginBundle:Security:check" }
+    
