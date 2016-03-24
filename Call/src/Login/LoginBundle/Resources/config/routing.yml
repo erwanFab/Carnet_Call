@@ -49,6 +49,17 @@ login_login_categorie:
     path:     /categories/new
     defaults: { _controller: "LoginLoginBundle:Categories:new" }
     
+    
+# Send a Email from Gmail
+
+login_login_send:  
+    path:     /send/{id}
+    defaults: { _controller: "LoginLoginBundle:SendEmail:show" }    
+    
+    
+    
+    
+    
 # for Administration we use FOS UserBundle for Login and Register
 
 

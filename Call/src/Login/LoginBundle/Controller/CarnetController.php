@@ -43,13 +43,32 @@ class CarnetController extends Controller
 		public function indexAction(Request $request)
 		{
 		
+			
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+        throw $this->createAccessDeniedException();
+    }
+
+  
+
+    // the above is a shortcut for this
+    $user = $this->get('security.token_storage')->getToken()->getUser();
+			
+			
+			if($user){
+			
+				
+					
+					
+					
+					
 			$em    = $this->get('doctrine.orm.entity_manager');
 			
 			$dql = "Select A.id_personne,Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
 			FROM LoginLoginBundle:Carnet AS A
 			INNER JOIN LoginLoginBundle:Categories  As Ca
 			WITH A.id_cat = Ca.id
-			INNER JOIN LoginLoginBundle:Avatar  As Av WITH  A.image_id=Av.id ";
+			INNER JOIN LoginLoginBundle:Avatar  As Av WITH  A.image_id=Av.id 
+					";
 			
 			$query = $em->createQuery($dql);
 			
@@ -67,6 +86,8 @@ class CarnetController extends Controller
 			
 		    // parameters to template
 		    return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+			}
+			return $this->generateUrl('fos_user_security_login');
 		}
 		        
 		     /*
@@ -80,7 +101,18 @@ class CarnetController extends Controller
 		        
 		public function friendsAction(Request $request)
 		{
-		
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			
+			
+			
+			// the above is a shortcut for this
+			$user = $this->get('security.token_storage')->getToken()->getUser();
+				
+				
+			if($user){
+					
 			$em    = $this->get('doctrine.orm.entity_manager');
 		
 			$dql = "Select A.id_personne, Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
@@ -106,6 +138,9 @@ class CarnetController extends Controller
 		
 			// parameters to template
 			return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+			}
+			return $this->generateUrl('fos_user_security_login');
+			
 		}
 		       
 
@@ -122,7 +157,18 @@ class CarnetController extends Controller
 
 		public function famillyAction(Request $request)
 		{
-
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			
+			
+			
+			// the above is a shortcut for this
+			$user = $this->get('security.token_storage')->getToken()->getUser();
+				
+				
+			if($user){
+					
 				$em    = $this->get('doctrine.orm.entity_manager');
 			
 				$dql = "Select A.id_personne, Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
@@ -148,6 +194,8 @@ class CarnetController extends Controller
 			
 				// parameters to template
 				return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+				}
+				return $this->generateUrl('fos_user_security_login');
 			}
  
 			
@@ -169,7 +217,18 @@ class CarnetController extends Controller
 
 				public function doctorAction(Request $request)
 				{
-				
+					if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+						throw $this->createAccessDeniedException();
+					}
+					
+					
+					
+					// the above is a shortcut for this
+					$user = $this->get('security.token_storage')->getToken()->getUser();
+						
+						
+					if($user){
+							
 					$em    = $this->get('doctrine.orm.entity_manager');
 				
 					$dql = "Select A.id_personne,Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
@@ -196,9 +255,9 @@ class CarnetController extends Controller
 					
 					// parameters to template
 					return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+					}
 					
-					
-					
+					return $this->generateUrl('fos_user_security_login');
 					
 					
 					
@@ -217,7 +276,18 @@ class CarnetController extends Controller
 				
 				public function pmiAction(Request $request)
 				{
-				
+					if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+						throw $this->createAccessDeniedException();
+					}
+					
+					
+					
+					// the above is a shortcut for this
+					$user = $this->get('security.token_storage')->getToken()->getUser();
+						
+						
+					if($user){
+							
 					$em    = $this->get('doctrine.orm.entity_manager');
 				
 					$dql = "Select A.id_personne, Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
@@ -244,6 +314,8 @@ class CarnetController extends Controller
 				
 					// parameters to template
 					return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+					}
+					return $this->generateUrl('fos_user_security_login');
 				}
 				
 				
@@ -261,7 +333,18 @@ class CarnetController extends Controller
 				
 				public function autoAction(Request $request)
 				{
-				
+					if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+						throw $this->createAccessDeniedException();
+					}
+					
+					
+					
+					// the above is a shortcut for this
+					$user = $this->get('security.token_storage')->getToken()->getUser();
+						
+						
+					if($user){
+							
 					$em    = $this->get('doctrine.orm.entity_manager');
 				
 					$dql = "Select A.id_personne, Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
@@ -288,6 +371,8 @@ class CarnetController extends Controller
 				
 					// parameters to template
 					return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+					}
+					return $this->generateUrl('fos_user_security_login');
 				}
 				
 				
@@ -308,7 +393,18 @@ class CarnetController extends Controller
 				
 				public function houseAction(Request $request)
 				{
-				
+					if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+						throw $this->createAccessDeniedException();
+					}
+					
+					
+					
+					// the above is a shortcut for this
+					$user = $this->get('security.token_storage')->getToken()->getUser();
+						
+						
+					if($user){
+							
 					$em    = $this->get('doctrine.orm.entity_manager');
 				
 					$dql = "Select A.id_personne, Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
@@ -335,18 +431,11 @@ class CarnetController extends Controller
 				
 					// parameters to template
 					return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination));
+					}
+					return $this->generateUrl('fos_user_security_login');
 				}
 				
-				
-				
-				
-				
-				
-    
-    
-    
-
-   
+	/*   
     public function newAction(Request $request)
     {
         $carnet = new Carnet();
@@ -367,7 +456,7 @@ class CarnetController extends Controller
         ));
     }
 
-   
+  /* 
     public function showAction(Carnet $carnet)
     {
         $deleteForm = $this->createDeleteForm($carnet);
@@ -378,7 +467,7 @@ class CarnetController extends Controller
         ));
     }
 
-    
+  /*  
     public function editAction(Request $request, Carnet $carnet)
     {
         $deleteForm = $this->createDeleteForm($carnet);
@@ -400,7 +489,7 @@ class CarnetController extends Controller
         ));
     }
 
-   
+ /*  
     public function deleteAction(Request $request, Carnet $carnet)
     {
         $form = $this->createDeleteForm($carnet);
@@ -422,6 +511,7 @@ class CarnetController extends Controller
      *
      * @return \Symfony\Component\Form\Form The form
      */
+    /*
     private function createDeleteForm(Carnet $carnet)
     {
         return $this->createFormBuilder()
@@ -430,4 +520,5 @@ class CarnetController extends Controller
             ->getForm()
         ;
     }
+    */
 }

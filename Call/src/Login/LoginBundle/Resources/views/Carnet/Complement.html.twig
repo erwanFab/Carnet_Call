@@ -19,13 +19,13 @@
 			
 			
 			<div class="Fiche">
-		
+			
 			{% for cpl in complement %}
 					
 					<div class="adresse">
 					{% if  cpl.adresse is defined %}
 						{% if  cpl.adresse != "" %}
-						<h2><span class="glyphicon glyphicon-globe"> Adresse : {{ cpl.adresse }}</span>	</h2>
+						<h2><span class="glyphicon glyphicon-globe icon-complet"> Adresse : {{ cpl.adresse }}</span>	</h2>
 						{% else %}	
 							<img src="{{ asset('bundles/loginlogin/img/fixe.png') }}" width="100" height="100" alt="téléphone non disponible" />
 						{% endif %}
@@ -37,7 +37,7 @@
 						
 					{% if  cpl.tel_fixe is defined %}
 						{% if  cpl.tel_fixe != "" %}
-							<h2><span class ="glyphicon glyphicon-phone-alt"> Téléphone fixe : {{ cpl.tel_fixe }}</span></h2>
+							<h2><span class ="glyphicon glyphicon-phone-alt icon-complet"> Téléphone fixe :<a href="tel: {{ cpl.tel_fixe }}">{{ affiche1 }}</a></span></h2>
 						{% else %}	
 							<img src="{{ asset('bundles/loginlogin/img/fixe.png') }}" width="100" height="100" alt="téléphone non disponible" />
 						{% endif %}
@@ -46,7 +46,7 @@
 					</br>
 					{% if  cpl.tel_box is defined %}
 							{% if  cpl.tel_box != "" %}
-							<h2><span class ="glyphicon glyphicon-earphone"> Téléphone ADSL : {{ cpl.tel_box }}</span></h2>
+							<h2><span class ="glyphicon glyphicon-earphone icon-complet"> Téléphone ADSL :<a href="tel: {{ cpl.tel_box }}">{{ affiche2 }}</a></span></h2>
 						{% else %}	
 							<img src="{{ asset('bundles/loginlogin/img/téléphone.png') }}" width="100" height="100" alt="téléphone non disponible" />
 						{% endif %}
@@ -56,7 +56,7 @@
 					</br>
 					{% if  cpl.mobile is defined %}
 							{% if  cpl.mobile != "" %}
-							<h2><span class ="glyphicon glyphicon-phone"> Téléphone Mobile : {{ cpl.mobile }}</span></h2>
+							<h2><span class ="glyphicon glyphicon-phone icon-complet"> Téléphone Mobile : <a href="tel:{{ cpl.mobile }}">{{ affiche3 }}</a></span></h2>
 						{% else %}	
 							<img src="{{ asset('bundles/loginlogin/img/mobile.png') }}" width="100" height="100" alt="téléphone non disponible" />
 						{% endif %}
@@ -66,7 +66,7 @@
 					</br>
 					{% if  cpl.email is defined %}
 							{% if  cpl.email != "" %}
-							<h2><span class="glyphicon glyphicon-envelope"> Email : <a href="#">{{ cpl.email }}</a></span></h2>
+							<h2><span class="glyphicon glyphicon-envelope icon-complet"> Email : <a href="mailto :{{ cpl.email }}">{{ cpl.email }}</a></span></h2>
 						{% else %}	
 							<img src="{{ asset('bundles/loginlogin/img/email.png') }}" width="100" height="100" alt="téléphone non disponible" />
 						{% endif %}
@@ -79,10 +79,12 @@
 					</div>
 					
 					
+			
+			
+			<a href="{{ path('login_login_send', {'id': cpl.id }) }}"><img src="{{ asset('bundles/loginlogin/img/email.png') }}"width="100" height="100" alt="logo"/> </a>
 			{% endfor %}
-			
-			
 			</div>
+			
 </div>
 </div>
 			

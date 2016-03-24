@@ -10,7 +10,14 @@
 			<div class="count">
 							
 				<img src="{{ asset('bundles/loginlogin/img/logo_count.png') }}"width="100" height="100" alt="logo"/>  {{ pagination.getTotalItemCount }} Personnes
+
 			</div>
+	
+ 			<div class="btn-toolbar" role="toolbar" aria-label="...">
+  <div class="btn-group" role="group" aria-label="...">All</div>
+  <div class="btn-group" role="group" aria-label="...">2</div>
+  <div class="btn-group" role="group" aria-label="...">3</div>
+</div>
 			
 			<div class="dark-theme">
    							 {{ knp_pagination_render(pagination) }}
@@ -39,7 +46,7 @@
 												{% endif %}
 										</td>
 										<td class="Prenom">{{ contact.prenom }}</td>
-    									<td class = "Nom"><a href="{{ path('login_login_complement', {'id': contact.id_personne ,'nom': contact.nom ,'prenom': contact.prenom }) }}">{{ contact.nom }}</a></td>
+    									<td class = "Nom"><a href="{{ path('login_login_complement', {'id': contact.id_personne ,'nom': contact.nom ,'prenom': contact.prenom }) }}"><ul id="list">{{ contact.nom }}</ul></a></td>
     									<td>{{ contact.nom_categorie }}</td>
     
     						{% endfor %}
@@ -54,5 +61,4 @@
 	</div>
 </div>
 {%  endblock %}
-
 

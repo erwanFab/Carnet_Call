@@ -1,0 +1,19 @@
+
+
+{% block content %}
+
+{{ text }}
+
+
+<h1>Fiche</h1>
+
+
+{{ nom }} {{ prenom }} 
+{{ adresse }} </br>
+<a href="tel:{{ tel_fixe }}">{{ tel_fixe }}</a> </br>
+<a href="tel:{{ tel_box }} ">{{ tel_box }}</a></br>
+<a href="tel:{{ mobile }}">{{ mobile }}</a> </br>
+<a href="mailto:{{ email }}">{{ email }}</a> </br>
+
+
+{% endblock %}
