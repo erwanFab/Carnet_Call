@@ -7,9 +7,11 @@ body{
 .navbar-static-top
 {
 	margin-top:-20px;
-	width :270px;
+
+	width :220px;
+
 	height:1400px;
-	font-size:25px;
+	font-size:20px;
 	
 }
 
@@ -17,7 +19,7 @@ body{
 	margin-top:20px;
 	padding:5px;
 	
-	width :300px;
+	width :200px;
 	
 }
 
@@ -39,13 +41,20 @@ body{
 .active
 {
 	margin-left:30px;
-	width :200px;
+	width :150px;
 }
 
 .dropdown-toggle
 {
 	margin-left:30px;
-	width :200px;
+	width :150px;
+}
+
+.dropdown-toggle
+{
+	margin-left:30px;
+	width :150px;
+
 	
 }
 
