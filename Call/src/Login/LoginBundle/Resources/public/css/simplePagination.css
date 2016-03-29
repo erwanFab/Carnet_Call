@@ -152,7 +152,7 @@ span.ellipse.clickable {
 .dark-theme
 {
 	width:1150px;
-	height:100px;
+	height:70px;
 	background: -moz-linear-gradient(top, #555 0%, #333 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#555), color-stop(100%,#333)); /* Chrome,Safari4+ */
 	background: -webkit-linear-gradient(top, #555 0%,#333 100%); /* Chrome10+,Safari5.1+ */
@@ -160,7 +160,7 @@ span.ellipse.clickable {
 	background: -ms-linear-gradient(top, #555 0%,#333 100%); /* IE10+ */
 	background: linear-gradient(top, #555 0%,#333 100%); /* W3C */
 	
-	margin-left : 150px;
+	margin-left : 90px;
 	margin-top : 10px;
 }
 
@@ -169,7 +169,7 @@ span.ellipse.clickable {
 .dark-theme a, .dark-theme span {
 	float: left;
 	color: #CCC;
-	font-size:35px;
+	font-size:25px;
 	line-height:24px;
 	font-weight: normal;
 	text-align: center;
