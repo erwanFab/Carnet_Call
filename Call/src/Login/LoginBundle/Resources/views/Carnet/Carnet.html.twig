@@ -13,17 +13,12 @@
 
 			</div>
 	
- 			<div class="btn-toolbar" role="toolbar" aria-label="...">
-  <div class="btn-group" role="group" aria-label="...">All</div>
-  <div class="btn-group" role="group" aria-label="...">2</div>
-  <div class="btn-group" role="group" aria-label="...">3</div>
-</div>
 			
 			<div class="dark-theme">
    							 {{ knp_pagination_render(pagination) }}
 			</div>
 			
-			<table class="personne">
+			<table class="personne"id="personne">
 			
 						<thead class="Entete">
 								     <tr>
@@ -58,7 +53,47 @@
 			<div class="dark-theme">
    							 {{ knp_pagination_render(pagination) }}
 			</div>
+			  {% if  page != maxpage %}
+				<div class="alphabetic" role="toolbar">
+		  				  <div class="btn-group-vertical" role="group" aria-label="First group">
+						    <button type="button" class="btn btn-primary" id ="button" name="alphabet" onclick='alphabetSearch(-1);' >All</button>
+						    <button type="button" class="btn btn-secondary" id ="button" onclick='alphabetSearch(0);'>A</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch(1);'>B</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch(2);'>C</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch(3);'>D</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>E</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>F</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>G</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>H</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>I</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>J</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>K</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>L</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>M</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>O</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>P</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>Q</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>R</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>S</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>T</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>U</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>V</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>W</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>X</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>Y</button>
+						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>Z</button>
+						    
+						  </div>
+						  
+						    	
+						    {% endif %}
+ 
+						  </div>
+				</div>   
 	</div>
 </div>
-{%  endblock %}
 
+
+
+
+{%  endblock %}

@@ -7,7 +7,7 @@ body{
 .navbar-static-top
 {
 	margin-top:-20px;
-	width :350px;
+	width :270px;
 	height:1400px;
 	font-size:25px;
 	
@@ -33,4 +33,25 @@ body{
 	
 	width:400px;
 	height:auto;
+}
+
+
+.active
+{
+	margin-left:30px;
+	width :200px;
+}
+
+.dropdown-toggle
+{
+	margin-left:30px;
+	width :200px;
+	
+}
+
+
+.dropdown-menu
+{
+	background:orange;
+	margin-lelt : 50px;
 }
