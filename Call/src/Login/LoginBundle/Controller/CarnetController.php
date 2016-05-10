@@ -51,7 +51,9 @@ class CarnetController extends Controller
 			    // the above is a shortcut for this
     		$user = $this->get('security.token_storage')->getToken()->getUser();
 			if($user){
+				
 				$em    = $this->get('doctrine.orm.entity_manager');
+				
 				$dql = "Select A.id_personne,Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
 				FROM LoginLoginBundle:Carnet AS A
 				INNER JOIN LoginLoginBundle:Categories  As Ca
@@ -64,19 +66,84 @@ class CarnetController extends Controller
 				$paginator  = $this->get('knp_paginator');
 			    $pagination = $paginator->paginate(
 			        $query, /* query NOT result */
-			    	$page =$request->query->getInt('page', 1)/*page number*/,
-			        5 	/*limit per page*/ 
-			    );
+		    	$page =$request->query->getInt('page', 1),/*page number*/
+			       5 
+			        /*limit per page*/ 
+			   );
 				
 			   $valpage =$pagination ->getTotalItemCount()/5;
 			   $maxpage = ceil($valpage);
 			   
+			  
 			    // parameters to template
-			    return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination,'page'=>$page,'maxpage' =>$maxpage));
+			    return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination,'page'=>$page,'maxpage' =>$maxpage ));
 			}
 			return $this->generateUrl('fos_user_security_login');
 		}
-		        
+		      
+		public function selectionAction(Request $request,$myValue = NULL)
+		{
+		
+				
+			if (!$this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')) {
+				throw $this->createAccessDeniedException();
+			}
+			// the above is a shortcut for this
+			$user = $this->get('security.token_storage')->getToken()->getUser();
+			if($user){
+		
+				
+					
+				$em    = $this->get('doctrine.orm.entity_manager');
+			
+				$myValue = $_GET['myParam'];
+			
+		// $request->request->get('myParam'); // get a $_POST parameter
+					
+				var_dump($myValue);
+					
+						
+					
+				
+								$dql = "Select A.id_personne,Av.picture_name,A.nom,A.prenom,Ca.nom_categorie
+										FROM LoginLoginBundle:Carnet AS A
+										INNER JOIN LoginLoginBundle:Categories  As Ca
+										WITH A.id_cat = Ca.id
+										INNER JOIN LoginLoginBundle:Avatar  As Av WITH  A.image_id=Av.id
+										WHERE A.nom LIKE '".$myValue."%'
+										ORDER By A.nom
+								
+										";
+								
+								
+							
+				
+					
+					
+				$query = $em->createQuery($dql);
+				$paginator  = $this->get('knp_paginator');
+				$pagination = $paginator->paginate(
+						$query, /* query NOT result */
+						$page =$request->query->getInt('page', 1),/*page number*/
+						5 	/*limit per page*/
+						);
+		
+				$valpage =$pagination ->getTotalItemCount()/5;
+				$maxpage = ceil($valpage);
+		
+				$url = $this->generateUrl('login_login_alpha', array('myParam'=>$myValue));
+				
+				return  $this->generateUrl($url);
+				
+				// parameters to template
+			//return $this->render('LoginLoginBundle:Carnet:Carnet.html.twig', array('pagination' => $pagination,'page'=>$page,'maxpage' =>$maxpage,'myValue'=>$myValue));
+				}
+			
+			return $this->generateUrl('fos_user_security_login');
+		}
+		
+	
+		
 		     /*
 		      * Selection par Amis
 		      * 
@@ -348,6 +415,18 @@ class CarnetController extends Controller
 				}
 			return $this->generateUrl('fos_user_security_login');
 				}
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				
 	/*   
     public function newAction(Request $request)

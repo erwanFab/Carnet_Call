@@ -7,7 +7,7 @@ body{
 .navbar-static-top
 {
 	margin-top:-20px;
-	width :220px;
+	width :200px;
 
 	height:1400px;
 	font-size:20px;
@@ -41,7 +41,10 @@ body{
 {
 	margin-left:30px;
 	width :150px;
+	
 }
+
+
 
 .dropdown-toggle
 {
@@ -51,10 +54,75 @@ body{
 }
 
 
-
-
 .dropdown-menu
 {
 	background:orange;
 	margin-lelt : 50px;
 }
+
+
+/*	~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	*/
+
+/* Responsive Navigation styles begin here */
+
+nav > input,
+.nav-button {
+  display: none; /* hidden on large screens */
+}
+
+/* small screens styles */
+@media (max-width: 2767px) {
+ .nav-inner {
+   position: absolute;
+   width: 270px; 
+   margin-top : 10px; 
+   transform: translateX(-100%) translateZ(0);
+   transition: transform .2s;
+   will-change: transform;
+  }
+  /* here's goes the slide effect */
+  input:checked ~ .nav-inner {
+    transform: translateX(0);
+  }
+  input[type="checkbox"] {
+  	opacity :0;
+  }
+  
+
+  /* Button deco */
+  .nav-button {
+    display: block;
+    position: absolute;
+    top: 1rem; left: 1rem;
+    z-index: 1;
+    height: 3.5rem; width: 3.5rem;
+    background-color: transparent;
+    background-image: linear-gradient(to right, #C03, #C03),
+      linear-gradient(to right, #FFF, #FFF),
+      linear-gradient(to right, #FFF, #FFF);
+    background-position: center top, center, center bottom;
+    background-repeat: no-repeat;
+    background-size: 3.5rem .9rem;
+    padding: 0;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

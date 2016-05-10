@@ -53,43 +53,51 @@
 			<div class="dark-theme">
    							 {{ knp_pagination_render(pagination) }}
 			</div>
-			  {% if  page != maxpage %}
+			  {% if  (page != maxpage)   %}  
+			  	{% if (page > 1) %}
 				<div class="alphabetic" role="toolbar">
+					<form method="GET" action="" id ="Form">
 		  				  <div class="btn-group-vertical" role="group" aria-label="First group">
-						    <button type="button" class="btn btn-primary" id ="button" name="alphabet" onclick='alphabetSearch(-1);' >All</button>
-						    <button type="button" class="btn btn-secondary" id ="button" onclick='alphabetSearch(0);'>A</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch(1);'>B</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch(2);'>C</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch(3);'>D</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>E</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>F</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>G</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>H</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>I</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>J</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>K</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>L</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>M</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>O</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>P</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>Q</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>R</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>S</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>T</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>U</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>V</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>W</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>X</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>Y</button>
-						    <button type="button" class="btn btn-secondary"id ="button" onclick='alphabetSearch()'>Z</button>
-						    
-						  </div>
+						    <button type="submit" class="btn btn-primary" id ="button" name="alphabet" onclick='alphabetSearch(-1);'>All</button>
+						    <button type="submit" class="btn btn-secondary" id ="button" onclick='alphabetSearch(0);'>A</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(1);'>B</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(2);'>C</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(3);'>D</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(4)'>E</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(5)'>F</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(6)'>G</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(7)'>H</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(8)'>I</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(9)'>J</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(10)'>K</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(11)'>L</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(12)'>M</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(13)'>N</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(14)'>O</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(15)'>P</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(16)'>Q</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(17)'>R</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(18)'>S</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(19)'>T</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(20)'>U</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(21)'>V</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(22)'>W</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(23)'>X</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(24)'>Y</button>
+						    <button type="submit" class="btn btn-secondary"id ="button" onclick='alphabetSearch(25)'>Z</button>
 						  
+						 </div>
+						   </form>
 						    	
 						    {% endif %}
- 
+						  {% endif %}
 						  </div>
-				</div>   
+				</div>  
+				
+				
+				<div id="result"></div>
+				
+				 
 	</div>
 </div>
 

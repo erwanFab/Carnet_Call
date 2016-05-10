@@ -7,6 +7,10 @@ login_login_homepage:
 login_login_carnet:
     path:     /carnet
     defaults: { _controller: "LoginLoginBundle:Carnet:index" }
+
+login_login_alpha:
+    path:     /carnet/myParam{myParam}
+    defaults: { _controller: "LoginLoginBundle:Carnet:selection" }    
     
 login_login_amis:
     path:     /carnet/friends
@@ -57,8 +61,7 @@ login_login_send:
     defaults: { _controller: "LoginLoginBundle:SendEmail:show" }    
     
     
-    
-    
+
     
 # for Administration we use FOS UserBundle for Login and Register
 
