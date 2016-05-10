@@ -36,7 +36,10 @@ login_login_house:
     path:     /carnet/house
     defaults: { _controller: "LoginLoginBundle:Carnet:house" }
 
-
+login_login_bank:
+    path:     /carnet/bank
+    defaults: { _controller: "LoginLoginBundle:Carnet:bank" }
+    
 login_login_complement:
     path:     /complement/{id}/{nom}/{prenom}
     defaults: { _controller: "LoginLoginBundle:Complement:index" }
